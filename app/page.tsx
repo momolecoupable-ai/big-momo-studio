@@ -1,16 +1,11 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <main className="min-h-screen overflow-x-hidden bg-black text-white">
 
       {/* NAVBAR */}
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
 
           {/* LOGO */}
@@ -29,12 +24,10 @@ export default function Home() {
 
           {/* DESKTOP MENU */}
           <nav className="hidden items-center gap-8 md:flex">
-
             <NavLink href="/" text="Home" />
             <NavLink href="/player" text="Players" />
             <NavLink href="/gallery" text="Gallery" />
             <NavLink href="/about" text="About" />
-
           </nav>
 
           {/* DESKTOP CONTACT */}
@@ -45,78 +38,37 @@ export default function Home() {
             Contact ↗
           </Link>
 
-          {/* MOBILE BUTTON */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-[60] flex h-11 w-11 items-center justify-center border border-white/10 md:hidden"
-            aria-label="Menu"
-          >
-            <div className="flex flex-col gap-1.5">
-
-              <span
-                className={`block h-[2px] w-6 bg-white transition duration-300 ${
-                  menuOpen
-                    ? "translate-y-[4px] rotate-45"
-                    : ""
-                }`}
-              />
-
-              <span
-                className={`block h-[2px] w-6 bg-white transition duration-300 ${
-                  menuOpen
-                    ? "-rotate-45"
-                    : ""
-                }`}
-              />
-
-            </div>
-          </button>
-        </div>
-
-        {/* MOBILE MENU */}
-        <div
-          className={`absolute left-0 right-0 top-20 border-b border-white/10 bg-black transition-all duration-300 md:hidden ${
-            menuOpen
-              ? "visible translate-y-0 opacity-100"
-              : "invisible -translate-y-4 opacity-0"
-          }`}
-        >
-
-          <nav className="flex flex-col px-6 py-8">
-
-            <MobileLink
-              href="/"
-              text="Home"
-              closeMenu={() => setMenuOpen(false)}
-            />
-
-            <MobileLink
-              href="/player"
-              text="Players"
-              closeMenu={() => setMenuOpen(false)}
-            />
-
-            <MobileLink
-              href="/gallery"
-              text="Gallery"
-              closeMenu={() => setMenuOpen(false)}
-            />
-
-            <MobileLink
-              href="/about"
-              text="About"
-              closeMenu={() => setMenuOpen(false)}
-            />
-
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="mt-6 border border-lime-400 px-6 py-5 text-center text-sm font-black uppercase tracking-widest text-lime-400 transition hover:bg-lime-400 hover:text-black"
+          {/* MOBILE MENU */}
+          <details className="relative md:hidden">
+            <summary
+              className="flex h-11 w-11 cursor-pointer list-none items-center justify-center border border-white/10"
+              aria-label="Ouvrir le menu"
             >
-              Contact ↗
-            </Link>
+              <div className="flex flex-col gap-1.5">
+                <span className="block h-[2px] w-6 bg-white" />
+                <span className="block h-[2px] w-6 bg-white" />
+              </div>
+            </summary>
 
-          </nav>
+            <div className="absolute right-0 top-[64px] w-[280px] border border-white/10 bg-black shadow-2xl">
+              <nav className="flex flex-col px-6 py-6">
+
+                <MobileLink href="/" text="Home" />
+                <MobileLink href="/player" text="Players" />
+                <MobileLink href="/gallery" text="Gallery" />
+                <MobileLink href="/about" text="About" />
+
+                <Link
+                  href="/contact"
+                  className="mt-5 border border-lime-400 px-6 py-5 text-center text-sm font-black uppercase tracking-widest text-lime-400 transition hover:bg-lime-400 hover:text-black"
+                >
+                  Contact ↗
+                </Link>
+
+              </nav>
+            </div>
+          </details>
+
         </div>
       </header>
 
@@ -125,7 +77,7 @@ export default function Home() {
       <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-20 md:px-10">
 
         {/* BACKGROUND TEXT */}
-        <div className="animate-fade-in pointer-events-none absolute right-[-10%] top-[25%] text-[25vw] font-black leading-none text-white/[0.025]">
+        <div className="pointer-events-none absolute right-[-10%] top-[25%] text-[25vw] font-black leading-none text-white/[0.025]">
           MOMO
         </div>
 
@@ -285,7 +237,6 @@ export default function Home() {
                 </div>
 
               </div>
-
             </Link>
 
 
@@ -334,7 +285,6 @@ export default function Home() {
                 </div>
 
               </div>
-
             </Link>
 
           </div>
@@ -404,7 +354,7 @@ export default function Home() {
 
           <Link
             href="/contact"
-            className="animate-fade-up delay-300 mt-10 inline-block border border-lime-400 px-8 py-5 text-sm font-black uppercase tracking-widest text-lime-400 transition duration-300 hover:bg-lime-400 hover:text-black"
+            className="animate-fade-up delay-300 mt-10 inline-block border border-lime-400 px-8 py-5 text-sm font-black uppercase tracking-widest text-lime-400 transition hover:bg-lime-400 hover:text-black"
           >
             Contacter BIG.MOMO ↗
           </Link>
@@ -458,16 +408,13 @@ function NavLink({
 function MobileLink({
   href,
   text,
-  closeMenu,
 }: {
   href: string;
   text: string;
-  closeMenu: () => void;
 }) {
   return (
     <Link
       href={href}
-      onClick={closeMenu}
       className="border-b border-white/10 py-5 text-2xl font-black uppercase transition duration-300 hover:text-lime-400"
     >
       {text}
