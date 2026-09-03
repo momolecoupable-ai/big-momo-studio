@@ -74,7 +74,7 @@ export default function SirenhoPage() {
 
         {/* BACKGROUND TEXT */}
         <div className="pointer-events-none absolute right-[-15%] top-[20%] select-none text-[28vw] font-black leading-none text-white/[0.025]">
-          09
+          9
         </div>
 
         {/* GREEN GLOW */}
@@ -107,7 +107,7 @@ export default function SirenhoPage() {
 
               <div className="absolute bottom-6 right-6">
                 <span className="text-7xl font-black leading-none text-white/10 md:text-9xl">
-                  09
+                  9
                 </span>
               </div>
 
@@ -173,7 +173,7 @@ export default function SirenhoPage() {
 
               <Stat
                 label="Numéro"
-                value="09"
+                value="9"
               />
 
               <Stat
@@ -261,13 +261,45 @@ export default function SirenhoPage() {
       </section>
 
 
+      {/* PLAYER IDENTITY */}
+      <section className="border-t border-white/10 px-6 py-28 md:px-10">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="mb-14">
+            <p className="text-xs font-black uppercase tracking-[0.5em] text-lime-400">
+              02 — PLAYER IDENTITY
+            </p>
+
+            <h2 className="mt-5 text-4xl font-black uppercase md:text-6xl">
+              Son profil
+              <span className="text-lime-400">.</span>
+            </h2>
+          </div>
+
+          <div className="grid border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-3">
+            <Info label="Nom" value="Sirenho SDB" />
+            <Info label="Surnom" value="Kylian Mbappé" />
+            <Info label="Catégorie" value="U17" />
+            <Info label="Club" value="Jolof Olympique Club" />
+            <Info label="Poste" value="Attaquant / Ailier" />
+            <Info label="Pied fort" value="Gauche" />
+            <Info label="Taille" value="1m89" />
+            <Info label="Poids" value="75 KG" />
+            <Info label="Numéro" value="9" />
+          </div>
+
+        </div>
+      </section>
+
+
       {/* ATTRIBUTES */}
       <section className="border-t border-white/10 px-6 py-28 md:px-10">
 
         <div className="mx-auto max-w-7xl">
 
           <p className="text-xs font-black uppercase tracking-[0.5em] text-lime-400">
-            02 — ATTRIBUTES
+            03 — ATTRIBUTES
           </p>
 
           <h2 className="mt-6 text-5xl font-black uppercase md:text-7xl">
@@ -305,6 +337,109 @@ export default function SirenhoPage() {
       </section>
 
 
+      {/* STYLE */}
+      <section className="relative overflow-hidden border-t border-white/10 px-6 py-28 md:px-10">
+
+        <div className="pointer-events-none absolute right-0 top-10 text-[20rem] font-black leading-none text-white/[0.02]">
+          9
+        </div>
+
+        <div className="relative mx-auto max-w-7xl">
+          <p className="text-xs font-black uppercase tracking-[0.5em] text-lime-400">
+            04 — STYLE DE JEU
+          </p>
+
+          <h2 className="mt-6 text-5xl font-black uppercase leading-tight md:text-7xl">
+            Vitesse.
+            <br />
+            <span className="text-lime-400">Percussion.</span>
+            <br />
+            Projection.
+          </h2>
+
+          <p className="mt-10 max-w-3xl text-lg leading-8 text-white/50">
+            Sirenho aime attaquer l&apos;espace et donner du rythme aux actions. Son jeu s&apos;appuie sur des appels vers l&apos;avant, des accélérations franches et l&apos;envie de créer une différence dans le dernier tiers.
+          </p>
+        </div>
+      </section>
+
+
+      {/* MENTALITY */}
+      <section className="border-t border-white/10 px-6 py-28 md:px-10">
+
+        <div className="mx-auto max-w-7xl">
+          <div className="border border-white/10 p-8 md:p-16">
+            <p className="text-xs font-black uppercase tracking-[0.5em] text-lime-400">
+              05 — MENTALITY
+            </p>
+
+            <h2 className="mt-8 text-4xl font-black uppercase leading-tight md:text-7xl">
+              Travail.
+              <br />
+              Progression.
+              <br />
+              <span className="text-lime-400">Ambition.</span>
+            </h2>
+
+            <p className="mt-8 max-w-3xl text-lg leading-8 text-white/50">
+              À travers son parcours, Sirenho construit une identité de joueur ambitieuse et tournée vers la progression. Il cherche à apprendre, à développer ses qualités et à devenir toujours plus décisif pour son équipe.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      {/* CLUB */}
+      <section className="border-t border-white/10 px-6 py-28 md:px-10">
+
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.5em] text-lime-400">
+              06 — CLUB
+            </p>
+
+            <h2 className="mt-6 text-5xl font-black uppercase md:text-7xl">
+              JOLOF
+              <br />
+              <span className="text-lime-400">OLYMPIQUE CLUB.</span>
+            </h2>
+          </div>
+
+          <p className="flex items-end text-lg leading-8 text-white/50">
+            Sirenho évolue au Jolof Olympique Club, où il poursuit son développement dans la catégorie U17 et travaille à affirmer pleinement ses qualités offensives.
+          </p>
+        </div>
+      </section>
+
+
+      {/* CONTACT */}
+      <section className="border-t border-white/10 px-6 py-28 md:px-10">
+
+        <div className="mx-auto max-w-7xl border border-white/10 p-8 md:p-14">
+          <p className="text-xs font-black uppercase tracking-[0.5em] text-lime-400">
+            07 — CONTACT
+          </p>
+
+          <h2 className="mt-6 text-4xl font-black uppercase md:text-6xl">
+            Intéressé par
+            <br />
+            <span className="text-lime-400">le joueur ?</span>
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/50">
+            Pour toute demande professionnelle concernant Sirenho SDB, contactez directement le joueur.
+          </p>
+
+          <a
+            href="tel:+221704003666"
+            className="mt-8 inline-block border border-lime-400 px-7 py-4 text-sm font-black uppercase tracking-widest text-lime-400 transition hover:bg-lime-400 hover:text-black"
+          >
+            +221 70 400 36 66
+          </a>
+        </div>
+      </section>
+
+
       {/* CTA */}
       <section className="border-t border-white/10 px-6 py-32 md:px-10">
 
@@ -315,16 +450,13 @@ export default function SirenhoPage() {
           </p>
 
           <h2 className="mt-8 text-6xl font-black uppercase leading-[0.85] md:text-9xl">
-            NEXT
+            SIRENHO
             <br />
-            <span className="text-lime-400">
-              PLAYER.
-            </span>
+            <span className="text-lime-400">SDB.</span>
           </h2>
 
           <p className="mt-10 max-w-xl text-lg leading-8 text-white/40">
-            Découvrez les autres profils présentés par
-            BIG.MOMO Studio.
+            « KYLIAN MBAPPÉ »
           </p>
 
           <Link
