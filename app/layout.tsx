@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BIG.MOMO STUDIO",
   description: "BIG.MOMO STUDIO is a creative digital studio.",
+  verification: {
+    google: "uWIjJiLJEM_Rvvi93BCUJee1W4rDLpVj2zPwpe5sCng",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
