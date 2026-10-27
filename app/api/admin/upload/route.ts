@@ -1,0 +1,5 @@
+import { NextResponse } from "next/server";
+import { authorizeAdmin, getSupabaseAdmin } from "../../../../lib/supabase-admin";
+export const dynamic = "force-dynamic";
+const bucket = "player-photos";
+export async function POST(request: Request) { if (!(await authorizeAdmin(request))) return NextResponse.json({ error: "Non autorisé." }, { status: 401 }); const form = await request.formData(); const photo = form.get("photo"); if (!(photo instanceof File) || !photo.type.startsWith("image/") || photo.size > 8 * 1024 * 1024) return NextResponse.json({ error: "Choisissez une image de 8 Mo maximum." }, { status: 400 }); const extension = photo.name.split(".").pop()?.replace(/[^a-zA-Z0-9]/g, "") || "jpg"; const path = `${crypto.randomUUID()}.${extension}`; const client = getSupabaseAdmin(); const { error } = await client.storage.from(bucket).upload(path, photo, { contentType: photo.type, upsert: false }); if (error) return NextResponse.json({ error: `Téléversement impossible : ${error.message}` }, { status: 400 }); const { data } = client.storage.from(bucket).getPublicUrl(path); return NextResponse.json({ url: data.publicUrl }); }
