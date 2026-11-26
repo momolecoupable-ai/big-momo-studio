@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { supabase } from "../../lib/supabase";
 
+export const dynamic = "force-dynamic";
+
  type Player = { id: number; name: string | null; nickname: string | null; category: string | null; club: string | null; photo_url: string | null; slug: string | null; bio: string | null; published: boolean | null };
 const fallbackMoussa: Player = { id: -1, name: "Moussa Pogba", nickname: "« PAUL POGBA »", category: "Senior", club: "ASFA", photo_url: "/moussa-pogba.jpg", slug: "moussa", bio: "Un milieu complet, puissant et présent dans chaque phase du jeu.", published: true };
 
